@@ -1,0 +1,16 @@
+.menu-button {
+    background-color: #9c27b0;
+    color: white;
+}
+
+
+
+.menu-container {
+    display: flex;
+    gap: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

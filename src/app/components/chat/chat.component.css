@@ -1,0 +1,39 @@
+
+.user-item {
+    color: black;
+}
+
+.chat-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-divider {
+    border-top-color: black;
+}
+
+mat-icon {
+    color: black;
+}
+
+.message-box-container {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.message-box-container mat-form-field {
+    width: 60%;
+}
+
+.message-box-container button {
+    margin-left: 5px;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}

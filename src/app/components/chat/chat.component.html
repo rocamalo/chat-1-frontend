@@ -1,0 +1,32 @@
+<div class="container">
+    <div *ngIf="totalUsers$ | async as usersList">
+        <div  class="chat-header-container">
+            <h3>Users connected:</h3>
+            <h3>Total users: {{usersList.length}}</h3>
+        </div>
+        
+        <mat-list>
+            <mat-list-item *ngFor="let user of usersList">
+                <mat-icon>account_circle</mat-icon><a (click)="goToPrivateChat(user)"><span class="user-item">{{user}}</span></a>
+            </mat-list-item>
+        </mat-list>
+        
+    </div>
+    <mat-card>
+        <div *ngFor="let message of messageList">
+            <li class="li-element" *ngIf="message !== ''">
+                {{message}}
+            </li>  
+        </div>
+    </mat-card>
+    
+    
+    <div class="message-box-container">
+        <mat-form-field  class="example-full-width" appearance="outline">
+            <input matInput placeholder="Write your message" [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()">
+        </mat-form-field>
+        <button  [disabled]="newMessage === null || newMessage === ''" mat-button color="primary" (click)="sendMessage()">Send Message</button>
+    </div>
+    
+    
+</div>

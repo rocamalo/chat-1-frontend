@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+
+.container {
+    margin: 10px;
+    padding: 10px;
+    border: solid 0.1px rgb(116, 107, 107);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,1);
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    
+}
+.select-rooms-container {
+    width: 50%;
+    display: inline-grid;
+}

@@ -1,0 +1,31 @@
+<div class="container">
+    <p>JOIN OR CREATE A NEW ROOM</p>
+
+    <div class="select-rooms-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose an existing room</mat-label>
+        <mat-select [(ngModel)]="roomSelected">
+          <mat-option *ngFor="let room of rooms" [value]="room">
+            {{room}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <ng-container *ngIf="roomSelected !== ''">
+        <button  [disabled]="roomSelected === ''" mat-raised-button color="primary" (click)="joinRoom()">Join Room</button>
+    </ng-container>
+    </div>
+   
+
+    <hr>
+
+    <p>CREATE A NEW ROOM</p>
+    <div class="select-rooms-container">
+      <mat-form-field  class="example-full-width" appearance="outline">
+        <input matInput placeholder="Write a room name" [(ngModel)]="newRoom" (keyup)="$event.keyCode == 13 && createRoom()">
+      </mat-form-field>
+      <button [disabled]="newRoom === ''" mat-raised-button color="primary" (click)="createRoom()">Create new room</button>
+    </div>
+    
+</div>
+

@@ -1,0 +1,16 @@
+<h2>{{roomName}}</h2>
+<mat-card>
+    <div *ngFor="let message of messageList">
+        <li class="li-element" *ngIf="message !== ''">
+            {{message}} 
+        </li>  
+    </div>
+</mat-card>
+
+
+<div class="message-box-container">
+    <mat-form-field  class="example-full-width" appearance="outline">
+        <input matInput placeholder="Write your message" [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()">
+    </mat-form-field>
+    <button  [disabled]="newMessage === null || newMessage === ''" mat-button color="primary" (click)="sendMessage()">Send Message</button>
+</div>
